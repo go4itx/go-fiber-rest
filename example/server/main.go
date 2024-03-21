@@ -8,14 +8,6 @@ import (
 	"github.com/gofiber/fiber/v3"
 )
 
-// jwt密钥
-const secret = "my-jwt-secret"
-
-type User struct {
-	Name     string `validate:"required,min=5,max=20"`
-	Password string `validate:"required,min=5,max=20"`
-}
-
 func main() {
 	server.New(router)
 }
@@ -44,4 +36,12 @@ func router(app *fiber.App) {
 		userInfo := ctx.Locals("user")
 		return response.New(ctx).JSON(userInfo)
 	})
+}
+
+// jwt密钥
+const secret = "my-jwt-secret"
+
+type User struct {
+	Name     string `validate:"required,min=5,max=20"`
+	Password string `validate:"required,min=5,max=20"`
 }
