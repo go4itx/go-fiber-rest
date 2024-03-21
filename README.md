@@ -1,4 +1,4 @@
-# go-fiber-rest（升级及拆分旧项目go-fiber-api，搭建项目更快捷）
+## go-fiber-rest（升级旧项目go-fiber-api，搭建项目更快捷）
 ### 1、使用的是golang 1.22.0，fiber v3（注：目前fiber v3官方未正式发布，估计3月底发布）
 
 ### 2、可快速搭建一个基于fiber的restful api的骨架，轻松插入中间件，已具备jwt验证, 参数绑定及校验，返回结果封装，统一返回结果格式
