@@ -45,7 +45,7 @@ var ConfigDefault = Config{
 	},
 }
 
-// Helper function to set default values
+// configDefault Helper function to set default values
 func configDefault(config ...Config) Config {
 	// Return default config if nothing provided
 	if len(config) < 1 {

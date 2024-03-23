@@ -15,10 +15,12 @@ func New(ctx fiber.Ctx) resp {
 	return resp{ctx: ctx}
 }
 
+// JSON ...
 func (r resp) JSON(data ...any) error {
 	return r.ctx.JSON(HandleResult(data...))
 }
 
+// HandleResult ...
 func HandleResult(params ...any) Result {
 	var (
 		data any

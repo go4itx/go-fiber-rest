@@ -86,7 +86,7 @@ INFO Prefork:                   Disabled
 INFO PID:                       40450
 INFO Total process count:       1
 ```
-#### 测试登录接口
+#### 测试登录-接口
 ```
 curl --location --request POST 'http://127.0.0.1:8080/login' \
 --form 'name="test0321"' \
@@ -102,7 +102,7 @@ curl --location --request POST 'http://127.0.0.1:8080/login' \
 }
 ```
 
-#### 测试获取用户登录信息接口
+#### 测试获取当前用户信息-接口
 ```
 curl --location --request GET 'http://127.0.0.1:8080/user' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0MDMyMSIsImV4cCI6MTcxMTYyMDE2OSwiaWF0IjoxNzExMDE1MzY5fQ.daG6qmHn_ZWwe0HmY49PSr0yJsQrYzq2884PvTG_ze4'
