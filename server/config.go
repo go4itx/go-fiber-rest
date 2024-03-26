@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/go4itx/go-fiber-rest/response"
+	"github.com/go4itx/go-fiber-rest/validator"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/logger"
@@ -23,7 +24,8 @@ var ConfigDefault = Config{
 	Addr:    "0.0.0.0:8080",
 	AppName: "go-fiber-rest",
 	Fiber: &fiber.Config{
-		BodyLimit: 4 * 1024 * 1024, // 4MB
+		BodyLimit:       4 * 1024 * 1024, // 4MB
+		StructValidator: validator.New(), // 验证器
 		ErrorHandler: func(ctx fiber.Ctx, err error) error {
 			return response.New(ctx).JSON(err)
 		},

@@ -4,7 +4,6 @@ import (
 	"github.com/go4itx/go-fiber-rest/jwt"
 	"github.com/go4itx/go-fiber-rest/response"
 	"github.com/go4itx/go-fiber-rest/server"
-	"github.com/go4itx/go-fiber-rest/validate"
 	"github.com/gofiber/fiber/v3"
 )
 
@@ -20,7 +19,7 @@ func router(app *fiber.App) {
 
 	app.Post("/login", func(ctx fiber.Ctx) error {
 		var user User
-		if err := validate.Bind(ctx, &user); err != nil {
+		if err := ctx.Bind().Body(&user); err != nil {
 			return err
 		}
 
