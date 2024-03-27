@@ -37,14 +37,15 @@ func (*structValidator) Engine() any {
 }
 
 // ValidateStruct ...
-func (v *structValidator) ValidateStruct(out any) error {
-	if err := v.validator.Struct(out); err != nil {
-		if validationErrors, ok := err.(validator.ValidationErrors); ok {
-			if len(validationErrors) > 0 {
-				return fiber.NewError(fiber.StatusBadRequest, validationErrors[0].Translate(v.trans))
-			}
-		}
+func (v *structValidator) ValidateStruct(out any) (err error) {
+	err = v.validator.Struct(out)
+	if err == nil {
+		return
 	}
 
-	return nil
+	if validationErrors, ok := err.(validator.ValidationErrors); ok && len(validationErrors) > 0 {
+		return fiber.NewError(fiber.StatusBadRequest, validationErrors[0].Translate(v.trans))
+	}
+
+	return
 }
