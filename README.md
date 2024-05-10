@@ -1,7 +1,26 @@
 ## go-fiber-rest（升级旧项目go-fiber-api，搭建项目更快捷）
-### 1、使用的是golang 1.22.0，fiber v3（注：目前fiber v3官方未正式发布，估计3月底发布）
+### 1、使用的是golang 1.22.0，fiber v3（注：目前fiber v3官方未正式发布，估计4月底发布）
 
-### 2、可快速搭建一个基于fiber的restful api的骨架，轻松插入中间件，已具备jwt验证, 参数绑定及校验，返回结果封装，统一返回结果格式
+### 2、可快速搭建一个基于fiber的restful api的骨架，轻松插入中间件，已具备jwt验证, 集成github.com/go-playground/validator参数校验，返回结果封装，统一返回结果格式
+
+#### 快速上手：
+```
+server.New(func(app *fiber.App) {
+		app.All("/", func(ctx fiber.Ctx) error {
+			return response.New(ctx).JSON("Hello, World!")
+		})
+	})
+```
+#### 测试：curl http://127.0.0.1:8080/
+```
+{
+  "code": 200,
+  "msg": "OK",
+  "serverTime": 1715302453664,
+  "data": "Hello, World!"
+}
+```
+#### 返回值统一结构：
 ```
 type Result struct {
 	Code       int         `json:"code"`
@@ -10,7 +29,7 @@ type Result struct {
 	Data       interface{} `json:"data"`
 }
 ```
-如：
+
 ```
 {
     "code": 400,
