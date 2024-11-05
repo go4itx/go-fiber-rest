@@ -1,6 +1,6 @@
 module github.com/go4itx/go-fiber-rest
 
-go 1.22.0
+go 1.23.0
 
 require (
 	github.com/go-playground/locales v0.14.1
