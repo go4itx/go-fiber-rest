@@ -71,9 +71,9 @@ func HandleResult(params ...any) Result {
 	}
 
 	return Result{
-		Code:       fe.Code,
-		Msg:        fe.Message,
-		ServerTime: time.Now().UnixNano() / 1e6,
-		Data:       data,
+		Code:      fe.Code,
+		Msg:       fe.Message,
+		Timestamp: time.Now().UnixNano() / 1e6,
+		Data:      data,
 	}
 }

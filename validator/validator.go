@@ -32,12 +32,8 @@ func New() *structValidator {
 	}
 }
 
-func (*structValidator) Engine() any {
-	return ""
-}
-
-// ValidateStruct ...
-func (v *structValidator) ValidateStruct(out any) (err error) {
+// Validate ...
+func (v *structValidator) Validate(out any) (err error) {
 	err = v.validator.Struct(out)
 	if err == nil {
 		return
