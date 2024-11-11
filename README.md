@@ -16,7 +16,7 @@ server.New(func(app *fiber.App) {
 {
   "code": 200,
   "msg": "OK",
-  "serverTime": 1715302453664,
+  "Timestamp": 1715302453664,
   "data": "Hello, World!"
 }
 ```
@@ -25,7 +25,7 @@ server.New(func(app *fiber.App) {
 type Result struct {
 	Code       int         `json:"code"`
 	Msg        string      `json:"msg"`
-	ServerTime int64       `json:"serverTime"`
+	Timestamp  int64       `json:"Timestamp"`
 	Data       interface{} `json:"data"`
 }
 ```
@@ -34,7 +34,7 @@ type Result struct {
 {
     "code": 400,
     "msg": "Name为必填字段",
-    "serverTime": 1711016877188,
+    "Timestamp": 1711016877188,
     "data": ""
 }
 ```
@@ -115,7 +115,7 @@ curl --location --request POST 'http://127.0.0.1:8080/login' \
 {
     "code": 200,
     "msg": "OK",
-    "serverTime": 1711015369236,
+    "Timestamp": 1711015369236,
     "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0MDMyMSIsImV4cCI6MTcxMTYyMDE2OSwiaWF0IjoxNzExMDE1MzY5fQ.daG6qmHn_ZWwe0HmY49PSr0yJsQrYzq2884PvTG_ze4"
 }
 ```
@@ -131,7 +131,7 @@ curl --location --request GET 'http://127.0.0.1:8080/user' \
 {
     "code": 200,
     "msg": "OK",
-    "serverTime": 1711015572915,
+    "Timestamp": 1711015572915,
     "data": {
         "aud": "test0321",
         "exp": 1711620169,
