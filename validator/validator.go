@@ -10,7 +10,7 @@ import (
 	"github.com/gofiber/fiber/v3"
 )
 
-// simple struct validator for testing
+// Custom validator
 type structValidator struct {
 	trans     ut.Translator
 	validator *validator.Validate
